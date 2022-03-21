@@ -1,0 +1,40 @@
+<?php
+
+namespace {{ namespace }};
+
+use Hundredapps\Foundation\Concerns\Producer;
+
+class {{ class }} extends Producer
+{
+    /**
+     * The topic id.
+     *
+     * @var string
+     */
+    protected $topic = '{{ topic }}';
+
+    /**
+     * The key id.
+     *
+     * @var string
+     */
+    protected $key = '{{ key }}';
+
+    /**
+     * The header content.
+     *
+     * @var array
+     */
+    protected $header = [];
+
+    /**
+     * The body content.
+     *
+     * @var array
+     */
+    protected $body =
+    [
+        'key' => "",
+        'value' => "",
+    ];
+}

@@ -1,0 +1,73 @@
+{
+    "name": "togu-inotek/foundation",
+    "version": "1.0.0",
+    "description": "Foundation",
+
+    "authors": [{ "name": "Togu Inovasi Teknologi", "email": "developer.togu@gmail.com" }],
+
+    "require": {
+
+        "wikimedia/composer-merge-plugin": "dev-master",
+
+        "php": "^8.0",
+        "ext-swoole": ">=4.5",
+        "ext-rdkafka": ">=4.0",
+        "ext-xml": "*",
+        "ext-json": "*",
+        "ext-pcntl": "*",
+
+        "laravel/framework": "^8.0",
+        "laravel/octane": "^1.0",
+        "mateusjunges/laravel-kafka": "^1.0",
+
+        "predis/predis": "^1.0",
+        "laravel/legacy-factories": "^1.0",
+        "guzzlehttp/guzzle": "^7.0",
+        "fruitcake/laravel-cors": "^2.0"
+    },
+
+    "require-dev": {
+
+        "laravel/tinker": "^2.0",
+
+        "fakerphp/faker": "^1.9",
+        "mockery/mockery": "^1.3",
+        "phpunit/phpunit": "^9.3"
+    },
+
+    "autoload": {
+
+        "files": [
+
+            "src/Helpers/Sync.php",
+            "src/Helpers/Async.php"
+        ],
+
+        "psr-4": {
+
+            "Hundredapps\\Foundation\\": "src/"
+        }
+    },
+
+    "autoload-dev": {},
+
+    "extra": {
+
+        "laravel": {
+
+            "dont-discover": [
+
+                "laravel/octane",
+                "mateusjunges/laravel-kafka"
+            ],
+
+            "providers": [
+
+                "Hundredapps\\Foundation\\Providers\\FoundationServiceProvider",
+                "Hundredapps\\Foundation\\Providers\\SupervisorServiceProvider",
+                "Hundredapps\\Foundation\\Providers\\ServerServiceProvider",
+                "Hundredapps\\Foundation\\Providers\\MicroserviceServiceProvider"
+            ]
+        }
+    }
+}

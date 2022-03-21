@@ -1,0 +1,47 @@
+<?php
+
+namespace {{ namespace }};
+
+use Junges\Kafka\Contracts\KafkaConsumerMessage;
+use Hundredapps\Foundation\Concerns\Consumer;
+use Hundredapps\Foundation\Facades\Microservice;
+
+class {{ class }} extends Consumer
+{
+    /**
+     * The topic id.
+     *
+     * @var string
+     */
+    protected $topic = '{{ topic }}';
+
+    /**
+     * The group id.
+     *
+     * @var string
+     */
+    protected $group = '{{ group }}';
+
+    /**
+     * The auto committer.
+     *
+     * @var bool
+     */
+    protected $autocommit = true;
+
+    /**
+     * The handler.
+     *
+     * @return \Hundredapps\Foundation\Facades\Microservice
+     */
+    public function withHandler()
+    {
+        return Microservice::createConsumer()->withHandler(function (KafkaConsumerMessage $message) {
+
+            // $message->getTopicName(); //
+            // $message->getKey(); //
+            // $message->getHeaders(); //
+            // $message->getBody(); //
+        });
+    }
+}
